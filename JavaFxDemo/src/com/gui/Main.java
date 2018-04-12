@@ -4,6 +4,7 @@ import javafx.geometry.Pos;
 
 import java.io.IOException;
 
+import bodyMeasurement.BodyMeasureGUI;
 import bodyMeasurement.bodyMeasurementHandler;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -57,6 +58,9 @@ public class Main extends Application {
 	    Button foodDairyButton = new Button("Food Diary");
 	    Button exerciseJornalButton = new Button("Exercise");
 	    Button bodyMeasurementsButton = new Button("Body Meas");
+	    bodyMeasurementsButton.setOnAction(e -> {
+	    	sp.setContent(BodyMeasureGUI.getBodyMeasureGUI());
+	    });
 	    Button skinCareButton = new Button("Skin Care");
 	    Button sleepJournalButton = new Button("Sleep Jornal");
 	    Button addressBookButton = new Button("Address Book");
@@ -101,8 +105,8 @@ public class Main extends Application {
 		//Handler testing
 		bodyMeasurementHandler BMH = new bodyMeasurementHandler();
 		BMH.build();
-		//BMH.save();
-		BMH.load();
+		BodyMeasureGUI BMGui = new BodyMeasureGUI();
+		//BMH.load();
 	}
 			
 	private void closeProgram() {

@@ -57,5 +57,107 @@
     </void>
    </object>
   </void>
+  <void method="add">
+   <object class="bodyMeasurement.bodyMeasurement">
+    <void property="bodyWeight">
+     <double>89.5</double>
+    </void>
+    <void property="calf">
+     <double>40.5</double>
+    </void>
+    <void property="caliper">
+     <double>18.5</double>
+    </void>
+    <void property="chest">
+     <double>84.5</double>
+    </void>
+    <void property="forearm">
+     <double>108.5</double>
+    </void>
+    <void property="neck">
+     <double>43.5</double>
+    </void>
+    <void property="shoulder">
+     <double>54.5</double>
+    </void>
+    <void property="thigh">
+     <double>84.5</double>
+    </void>
+    <void property="upperArm">
+     <double>40.5</double>
+    </void>
+    <void property="waist">
+     <double>84.5</double>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="bodyMeasurement.bodyMeasurement">
+    <void property="bodyWeight">
+     <double>1.0</double>
+    </void>
+    <void property="calf">
+     <double>1.0</double>
+    </void>
+    <void property="caliper">
+     <double>1.0</double>
+    </void>
+    <void property="chest">
+     <double>1.0</double>
+    </void>
+    <void property="forearm">
+     <double>1.0</double>
+    </void>
+    <void property="neck">
+     <double>1.0</double>
+    </void>
+    <void property="shoulder">
+     <double>1.0</double>
+    </void>
+    <void property="thigh">
+     <double>1.0</double>
+    </void>
+    <void property="upperArm">
+     <double>1.0</double>
+    </void>
+    <void property="waist">
+     <double>1.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="bodyMeasurement.bodyMeasurement">
+    <void property="bodyWeight">
+     <double>2.0</double>
+    </void>
+    <void property="calf">
+     <double>22.0</double>
+    </void>
+    <void property="caliper">
+     <double>2.0</double>
+    </void>
+    <void property="chest">
+     <double>2.0</double>
+    </void>
+    <void property="forearm">
+     <double>2.0</double>
+    </void>
+    <void property="neck">
+     <double>2.0</double>
+    </void>
+    <void property="shoulder">
+     <double>22.0</double>
+    </void>
+    <void property="thigh">
+     <double>22.0</double>
+    </void>
+    <void property="upperArm">
+     <double>2.0</double>
+    </void>
+    <void property="waist">
+     <double>2.0</double>
+    </void>
+   </object>
+  </void>
  </object>
 </java>

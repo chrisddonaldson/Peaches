@@ -15,7 +15,8 @@ public class bodyMeasurementHandler implements Serializable{
 
 	private static final long serialVersionUID = 6784423204114561291L;
 	
-	ArrayList<bodyMeasurement> measurements = new ArrayList<bodyMeasurement>();	
+	public static ArrayList<bodyMeasurement> measurements = new ArrayList<bodyMeasurement>();
+	public static bodyMeasurement latest;
 	
 	public ArrayList<bodyMeasurement> getMeasurements() {
 		return measurements;
@@ -26,11 +27,14 @@ public class bodyMeasurementHandler implements Serializable{
 	public bodyMeasurementHandler() {
 
 	}
-		public void build() {
-			System.out.println("Building BMH handler");
-			load();
-		}
-	   public void load(){
+	public static void build() {
+		System.out.println("Building BMH handler");
+		load();
+		latest = measurements.get(measurements.size()-1);
+	}
+		
+		
+	public static void load(){
 		   try {
 			      // Use XMLDecoder to read the same XML file in.
 			      final XMLDecoder decoder = new XMLDecoder(new FileInputStream(new File("bodyMeasure.xml")));
@@ -38,11 +42,12 @@ public class bodyMeasurementHandler implements Serializable{
 			      decoder.close();
 			      System.out.println("Load successful");
 			      System.out.println("Reading Arraylist: " + listFromFile);
+			      measurements = listFromFile;
 		   }catch(IOException ex) {
 				   ex.printStackTrace();
 				   }}
 	   
-	   public void save() {
+	   public static void save() {
 		   try {
 			      final XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(
 			              new FileOutputStream(new File("bodyMeasure.xml"))));
@@ -53,13 +58,16 @@ public class bodyMeasurementHandler implements Serializable{
 			   ex.printStackTrace();
 		   }
 	   }
-	   public void add(bodyMeasurement b) {
+	   public static void add(bodyMeasurement b) {
 		   measurements.add(b);
 		   save();
 	   }
 	   public void remove(int i) {
 		   measurements.remove(i);
 		   save();
+	   }
+	   public static bodyMeasurement getLastest() {
+		  return latest;
 	   }
 }
 

@@ -8,12 +8,14 @@ public class bodyMeasurement implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 4926439262711233080L;
-double bodyWeight, caliper, upperArm, forearm,chest,thigh, calf, waist, shoulder, neck;
+double bodyWeight, caliper, upperArm, forearm, chest,thigh, calf, waist, shoulder, neck ;
 
 public bodyMeasurement(){}
 
-public bodyMeasurement(double bodyWeight, double caliper, double upperArm,double thigh, double forearm,double chest, double calf, double waist,
-		double shoulder, double neck) {
+public bodyMeasurement(double bodyWeight, double caliper, double upperArm,
+					   double thigh,	  double forearm, double chest,
+					   double calf, 	  double waist,   double shoulder, 
+					   double neck) {
 	super();
 	this.bodyWeight = bodyWeight;
 	this.caliper = caliper;
@@ -38,6 +40,22 @@ public double getCaliper() {
 public void setCaliper(double caliper) {
 	this.caliper = caliper;
 }
+public double getChest() {
+	return chest;
+}
+
+public void setChest(double chest) {
+	this.chest = chest;
+}
+
+public double getThigh() {
+	return thigh;
+}
+
+public void setThigh(double thigh) {
+	this.thigh = thigh;
+}
+
 public double getUpperArm() {
 	return upperArm;
 }
