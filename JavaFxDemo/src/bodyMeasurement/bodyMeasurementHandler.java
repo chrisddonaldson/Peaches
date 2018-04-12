@@ -2,6 +2,7 @@ package bodyMeasurement;
 
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -11,59 +12,54 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class bodyMeasurementHandler implements Serializable{
+
+	private static final long serialVersionUID = 6784423204114561291L;
+	
 	ArrayList<bodyMeasurement> measurements = new ArrayList<bodyMeasurement>();	
 	
+	public ArrayList<bodyMeasurement> getMeasurements() {
+		return measurements;
+	}
+	public void setMeasurements(ArrayList<bodyMeasurement> measurements) {
+		this.measurements = measurements;
+	}
 	public bodyMeasurementHandler() {
 
 	}
 		public void build() {
-			System.out.println("building BMH handler");
-			bodyMeasurement b1 = new bodyMeasurement(89.0,18.0,40.0,32.0,108.0,60.0,40.0,84.0,54.0,43.0);
-			measurements.add(b1);
-			System.out.println(measurements.size());
-			System.out.println("complete");
+			System.out.println("Building BMH handler");
+			load();
 		}
-	   public void load()
-	   {
-
-	      {
-	         try
-	         {
-	        	System.out.println("Trying to load bodyMeasurements");
-	            File file = new File("bodyMeasure.xml");
-	            System.out.println("File read");
-	            XMLDecoder decoder = new XMLDecoder(new FileInputStream(file));
-	            System.out.println("file decoded");
-	            measurements = (ArrayList<bodyMeasurement>) decoder.readObject();
-	            System.out.println("object transfer");
-	            decoder.close();
-	         }
-	         catch (IOException e)
-	         {
-	        	 System.out.println("Failed");
-	         }
-	      }
-	   }
+	   public void load(){
+		   try {
+			      // Use XMLDecoder to read the same XML file in.
+			      final XMLDecoder decoder = new XMLDecoder(new FileInputStream(new File("bodyMeasure.xml")));
+			      final ArrayList<bodyMeasurement> listFromFile = (ArrayList<bodyMeasurement>) decoder.readObject();
+			      decoder.close();
+			      System.out.println("Load successful");
+			      System.out.println("Reading Arraylist: " + listFromFile);
+		   }catch(IOException ex) {
+				   ex.printStackTrace();
+				   }}
 	   
 	   public void save() {
-	   
-	         try
-	         {
-	        	System.out.println("Trying to save bodyMeasurements");
-	            File file = new File("bodyMeasure.xml");
-	            System.out.println("file located");
-	            XMLEncoder encoder = new XMLEncoder(new FileOutputStream(file));
-	            System.out.println("outputstream loaded");
-	            //encoder.writeObject(bodyMeasurement);
-	            System.out.println("object writen");
-	            encoder.close();
-	            System.out.println("closed");
-	         }
-	         catch (IOException e)
-	         {
-	        	 System.out.println("Failed");
-	         }
-	      }
+		   try {
+			      final XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(
+			              new FileOutputStream(new File("bodyMeasure.xml"))));
+			          encoder.writeObject(measurements);
+			          encoder.close();
+		   }
+		   catch(IOException ex) {
+			   ex.printStackTrace();
+		   }
 	   }
-	
+	   public void add(bodyMeasurement b) {
+		   measurements.add(b);
+		   save();
+	   }
+	   public void remove(int i) {
+		   measurements.remove(i);
+		   save();
+	   }
+}
 

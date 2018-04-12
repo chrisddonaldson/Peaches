@@ -101,7 +101,7 @@ public class Main extends Application {
 		//Handler testing
 		bodyMeasurementHandler BMH = new bodyMeasurementHandler();
 		BMH.build();
-		BMH.save();
+		//BMH.save();
 		BMH.load();
 	}
 			

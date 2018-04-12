@@ -10,6 +10,8 @@ public class bodyMeasurement implements Serializable{
 	private static final long serialVersionUID = 4926439262711233080L;
 double bodyWeight, caliper, upperArm, forearm,chest,thigh, calf, waist, shoulder, neck;
 
+public bodyMeasurement(){}
+
 public bodyMeasurement(double bodyWeight, double caliper, double upperArm,double thigh, double forearm,double chest, double calf, double waist,
 		double shoulder, double neck) {
 	super();
