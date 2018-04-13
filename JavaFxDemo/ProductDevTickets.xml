@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_131" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="Work.ProductDevTicket">
+    <void property="dateCreated">
+     <string>LTN90</string>
+    </void>
+    <void property="description">
+     <string>Build it.</string>
+    </void>
+    <void property="title">
+     <string>13/04/2018</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Work.ProductDevTicket">
+    <void property="dateCreated">
+     <string>LTN80</string>
+    </void>
+    <void property="description">
+     <string>Make it</string>
+    </void>
+    <void property="ticketID">
+     <int>1</int>
+    </void>
+    <void property="title">
+     <string>12/04/2018</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Work.ProductDevTicket">
+    <void property="dateCreated">
+     <string>LTN70</string>
+    </void>
+    <void property="description">
+     <string>Work it</string>
+    </void>
+    <void property="ticketID">
+     <int>2</int>
+    </void>
+    <void property="title">
+     <string>11/04/2018</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>
